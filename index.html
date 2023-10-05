@@ -12,8 +12,10 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 <link rel="stylesheet" href="css/my-stylesheet.css">
 <link rel="stylesheet" href="css/normalize.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script> -->
+<!-- <script src="https://unpkg.com/vue@3.2.47/dist/vue.global.js"></script> -->
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<!-- <script src="https://unpkg.com/vue@3.2.47/dist/vue.global.prod.js"></script> -->
 <!--<link rel="stylesheet" href="css/style.css">-->
 <link rel="shortcut icon" href="images/favicon.ico.png">
 </head>
@@ -22,30 +24,34 @@
 <div class="container">
 <!-- Content here -->
 
-<!-- Navigation -->
-  <nav class="navbar navbar-expand-md navber-light bg-light sticky-top">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <img src="images/Pixel Art.jpg" width="50" height="50" alt="山ロゴ">
-      </a>
-      <h1>旭町スタジオ</h1>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav_item active">
-          	<a href="index.html" class="nav-link">HOME</a>
-          </li>
-          <li class="nav_item">
-            <a href="contact.html" class="nav-link">CONTACT</a>
-          </li>
-        </ul>
-      </div>
+<!-------------------------
+ヘッダー
+---------------------------->
+<nav class="navbar navbar-expand-md navber-light bg-light sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="images/Pixel Art.jpg" width="50" height="50" alt="山ロゴ">
+    </a>
+    <h1>旭町スタジオ</h1>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav_item active">
+          <a href="index.html" class="nav-link">HOME</a>
+        </li>
+        <li class="nav_item">
+          <a href="contact.html" class="nav-link">CONTACT</a>
+        </li>
+      </ul>
     </div>
-  </nav>
+  </div>
+</nav>
 <!--End navigation -->
-<!-- jumbotron -->
+<!------------------------
+jumbotronジャンボトロン
+-------------------------->
 <div class="jumbotron">
   <div class="container">
     <div class="jumbotron" style="background: url(images/write-593333_640.jpg);background-size: cover;">
@@ -58,14 +64,16 @@
         <p>
           It uses utility classes for typography and spacing to space content
           out within the larger container.
-      	</p>
+        </p>
 <!-- Button trigger modal -->
 				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-    			Launch demo modal
-  			</button>
+          Launch demo modal
+        </button>
 
-<!-- Modal -->
-  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<!------------------
+Modal モーダル
+------------------------->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -88,12 +96,25 @@
   </div>
 </div>
 <!-- End jumbotron -->
+
 <!-- container -->
 <div class="container">
   <h2 id="heading1">
     <bold>Welcome to My Website</bold>
   </h2>
-  <h3 class="heading1">This web site is creater portfollio</h3>
+  <div id="app">
+    {{ message }}
+  </div>
+<!-- <a class="test" :class="{ 'menu-active':test }">{{ text }}</a> -->
+    <!-- <p>{{ fullName() }}</p>
+    <p>{{ fullNameComputed }}</p>
+    <p>{{ now }}</P> -->
+    <!-- <a>{{ text }}</a> -->
+    <!-- <button @click="text = 'methods'">methods</button>
+    <div>
+    <button @click="count++">{{ count }}</button>-->
+
+  <h3 class="heading1">This web site is My portFolio</h3>
     <p class="heading">
       クリーエーターとしての
       <strong>強い</strong>
@@ -395,11 +416,24 @@
 </footer>
 
 </div>
-<script src="js/main.js"></script>
+<script src="./js/main.js" defer></script>
+<script src="./js/script.js" defer></script>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+<script>
+  const app = Vue.createApp({
+    data() {
+      return {
+        message: "こんにちは、Vue!",
+      };
+    },
+  });
+
+  app.mount("#app");
+</script>
 </body>
 </html>

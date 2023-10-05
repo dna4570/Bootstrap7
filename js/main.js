@@ -1,5 +1,6 @@
 'use script'
-
+import 'bootstrap/dist/js/bootstrap.min.js'
+import 'bootstrap/dist/css/bootstrap.min.css'
 function a(){
 	b();
 	ver c;
@@ -27,23 +28,27 @@ else if (window.attachEvent) window.attachEvent("onload", autorun);
 else window.onload = autorun;
 }
 function myFunction() {
-var x = document.getElementById("demo");
+let x = document.getElementById("demo");
 x.style.fontSize = "25px";
 x.style.color = "red";
 }
+
 function autorun(){
 	console.log("test");
 	if (window.addEventListener) window.addEventListener("load", autorun, false);
 	else if (window.attachEvent) window.attachEvent("onload", autorun);
 	else window.onload = autorun;
 }
+
 $(function(){
 	$("h1").css("color","lightgray");
 })
+
 $(function(){
 	$("p").css("color","red");
 })
-var mySwiper = new Swiper('.swiper-container', {
+
+let mySwiper = new Swiper('.swiper-container', {
 	direction: 'vertical',
 	mousewheel: {
 		forceToAxis: false,
